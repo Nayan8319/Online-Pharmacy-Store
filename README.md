@@ -177,54 +177,55 @@ Here’s how the heart ❤️ of **Pharma Medic** is structured! This well-norma
 
 > 📂 Place these screenshots in the `screenshots/` folder of your GitHub repo for preview.
 
-### 🔑 Login Page
-![Login](https://github.com/Nayan8319/Pharmacy-Store/blob/main/Pharmacy-Store/Module%20Images/Login.png)
 
 ### 📝 Registration Page
-![Register](https://github.com/Nayan8319/Pharmacy-Store/blob/main/Pharmacy-Store/Module%20Images/Register.png)
+![Register](https://github.com/Nayan8319/Online-Pharmacy-Store/blob/main/Module%20Images/Register.png)
+
+### 🔑 Login Page
+![Login](https://github.com/Nayan8319/Online-Pharmacy-Store/blob/main/Module%20Images/Login.png)
 
 ### 🏠 Home Page (Before Login)
-![Home](https://github.com/Nayan8319/Pharmacy-Store/blob/main/Pharmacy-Store/Module%20Images/Comman.png)
+![Home](https://github.com/Nayan8319/Online-Pharmacy-Store/blob/main/Module%20Images/Comman.png)
 
 ### 🛍️ Product Page
-![Product List](https://github.com/Nayan8319/Pharmacy-Store/blob/main/Pharmacy-Store/Module%20Images/All%20Product.png)
+![Product List](https://github.com/Nayan8319/Online-Pharmacy-Store/blob/main/Module%20Images/User%20Product.png)
 
 ### 🧾 Selected Product Page
-![Selected Product](https://github.com/Nayan8319/Pharmacy-Store/blob/main/Pharmacy-Store/Module%20Images/Selected%20Product.png)
+![Selected Product](https://github.com/Nayan8319/Online-Pharmacy-Store/blob/main/Module%20Images/Selected%20Product.png)
 
 ### 🛒 Cart Page
-![Cart](https://github.com/Nayan8319/Pharmacy-Store/blob/main/Pharmacy-Store/Module%20Images/Cart%20Page.png)
+![Cart](https://github.com/Nayan8319/Online-Pharmacy-Store/blob/main/Module%20Images/Cart%20Page.png)
 
 ### 💳 Checkout Page
-![Checkout](https://github.com/Nayan8319/Pharmacy-Store/blob/main/Pharmacy-Store/Module%20Images/Check%20Out%20Page.png)
+![Checkout](https://github.com/Nayan8319/Online-Pharmacy-Store/blob/main/Module%20Images/Check%20Out%20Page.png)
 
 ### 📬 Add Address Page
-![Add Address](https://github.com/Nayan8319/Pharmacy-Store/blob/main/Pharmacy-Store/Module%20Images/Check%20Out%20Page.png)
+![Add Address](https://github.com/Nayan8319/Online-Pharmacy-Store/blob/main/Module%20Images/Check%20Out%20Page.png)
 
 ---
 
 ### 👨‍💼 Admin Dashboard
 
 ### 📊 Admin Panel (Dashboard)
-![Admin Dashboard](https://github.com/Nayan8319/Pharmacy-Store/blob/main/Pharmacy-Store/Module%20Images/Admin%20Dashboard.png)
+![Admin Dashboard](https://github.com/Nayan8319/Online-Pharmacy-Store/blob/main/Module%20Images/Admin%20Dashboard.png)
 
 ### 🗃️ Add Product
-![Add Product](https://github.com/Nayan8319/Pharmacy-Store/blob/main/Pharmacy-Store/Module%20Images/Add%20Product.png)
+![Add Product](https://github.com/Nayan8319/Online-Pharmacy-Store/blob/main/Module%20Images/Add%20Product.png)
 
 ### ✏️ Edit Product
-![Edit Product](https://github.com/Nayan8319/Pharmacy-Store/blob/main/Pharmacy-Store/Module%20Images/Edit%20Product.png)
+![Edit Product](https://github.com/Nayan8319/Online-Pharmacy-Store/blob/main/Module%20Images/Edit%20Product.png)
 
 ### 🗂️ Add Category
-![Add Category](https://github.com/Nayan8319/Pharmacy-Store/blob/main/Pharmacy-Store/Module%20Images/Add%20Category.png)
+![Add Category](https://github.com/Nayan8319/Online-Pharmacy-Store/blob/main/Module%20Images/Add%20Category.png)
 
 ### ✏️ Edit Category
-![Edit Category](https://github.com/Nayan8319/Pharmacy-Store/blob/main/Pharmacy-Store/Module%20Images/Edit%20Category.png)
+![Edit Category](https://github.com/Nayan8319/Online-Pharmacy-Store/blob/main/Module%20Images/Edit%20Category.png)
 
 ### 📋 All Orders
-![All Orders](https://github.com/Nayan8319/Pharmacy-Store/blob/main/Pharmacy-Store/Module%20Images/All%20Orders.png)
+![All Orders](https://github.com/Nayan8319/Online-Pharmacy-Store/blob/main/Module%20Images/All%20Orders.png)
 
 ### 👥 All Users
-![All Users](https://github.com/Nayan8319/Pharmacy-Store/blob/main/Pharmacy-Store/Module%20Images/All%20Users.png)
+![All Users](https://github.com/Nayan8319/Online-Pharmacy-Store/blob/main/Module%20Images/All%20Users.png)
 
 ---
 
