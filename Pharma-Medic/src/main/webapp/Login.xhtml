@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+    <title>Login - Pharmacy Medic</title>
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="textbox.css" rel="stylesheet" />
+    <link src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" name="all.js" target="head" />
+    <style>
+        .back {
+            background-image: url('images/common/background.jpg');
+            background-color: #f3f3f3;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .maindiv {
+            background-color: white;
+            opacity: 0.9;
+        }
+    </style>
+</h:head>
+<h:body styleClass="back">
+    <section>
+        <div class="px-4 py-5 px-md-5 text-center text-lg-start">
+            <div class="container">
+                <div class="row gx-lg-5 align-items-center">
+                    <div class="col-lg-6 mt-10 mb-5 mb-lg-0">
+                        <h1 class="my-5 display-3 fw-bold" style="color: #2D9CDB;">Pharmacy <br />
+                            <span style="color: #27AE60;">Medic!</span>
+                        </h1>
+                        <h5>
+                            <span style="color: #8B0000;">
+                                As you log in, picture yourself walking down the aisles of our online pharmacy,
+                                where each product is carefully selected to support your well-being and health journey.
+                            </span>
+                        </h5>
+                    </div>
+                    <div class="col-lg-6 mb-5 mt-5 mb-lg-0">
+                        <div class="card maindiv">
+                            <div class="card-body py-5 px-md-5">
+                                <h1 class="fw-bold mb-5" style="color: hsl(356,75%,43%)">Login</h1>
+                                <h:form id="loginForm" class="main_form">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h:inputText class="Login" a:placeholder="Email" value="#{userCDI.email}" required="true"
+                                                         requiredMessage="Email is required." />
+                                        </div>
+                                        <div class="col-md-12">
+                                            <h:inputSecret class="Login" a:placeholder="Password" value="#{userCDI.password}" required="true"
+                                                           requiredMessage="Password is required." />
+                                        </div>
+                                        <div class="col-md-12">
+                                            <h:commandButton value="Login" styleClass="btn btn-block Login_btn" action="#{userCDI.login}" />
+                                        </div>
+                                        <h:messages globalOnly="true" style="color: red;" />
+                                        <div class="col-md-12 text-center mt-3">
+                                            <h:link value="Don't have an account? Register here" outcome="Register.jsf"
+                                                    style="color: hsl(45,98%,47%); text-decoration: none;" />
+                                        </div>
+                                    </div>
+                                </h:form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<script>
+    window.onload = function() {
+        const loggedInUser = sessionStorage.getItem('loggedInUser');
+        if (loggedInUser) {
+            console.log('Session Storage Data:', loggedInUser);
+        } else {
+            console.error('No session storage data found.');
+        }
+    };
+</script>
+</h:body>
+</html>

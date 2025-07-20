@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <title>Edit Product</title>
+
+        <!-- Google Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&amp;display=swap" />
+        <link rel="stylesheet" href="https://unpkg.com/@webpixels/css@1.1.5/dist/index.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.4.0/font/bootstrap-icons.min.css" />
+
+        <!-- Local stylesheets -->
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="fonts/icomoon/style.css" />
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css" />
+        <link rel="stylesheet" href="css/magnific-popup.css" />
+        <link rel="stylesheet" href="css/jquery-ui.css" />
+        <link rel="stylesheet" href="css/owl.carousel.min.css" />
+        <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+        <link rel="stylesheet" href="css/aos.css" />
+    </h:head>
+
+    <h:body>
+        <div class="site-wrap">
+            <!-- Header Section Start -->
+            <h:form>
+                <ui:include src="Header.xhtml" />
+            </h:form>
+            <!--Header Section End-->
+
+            <!--Navigation Path Start--> 
+            <div class="bg-light py-3">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 mb-0">
+                            <a href="AdminDashboard.jsf">Home</a> 
+                            <span class="mx-2 mb-0">/</span> 
+                            <a href="AllProducts.jsf">All Products</a> 
+                            <span class="mx-2 mb-0">/</span> Edit Product
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Navigation Path End-->
+
+            <!-- Body Section Start -->
+            <div class="container ml-5 mr-5 mt-4 mb-5">
+                <div class="card ml-5 mr-5">
+                    <div class="card-header">
+                        <h2>Edit Product</h2>
+                    </div>
+                    <div class="card-body">
+                        <h:form id="editProductForm">
+                            <h:messages globalOnly="true" layout="table" />
+                            <label for="productId" class="form-label">Product id:</label>
+                            <h:inputText id="productId" value="#{adminCDI.productId}" class="form-control" required="true" a:placeholder="Enter Product Name" />
+                            <br/>
+                            <label for="productName" class="form-label">Product Name:</label>
+                            <h:inputText id="productName" value="#{adminCDI.productName}" class="form-control" required="true" a:placeholder="Enter Product Name" />
+                            <br/>
+
+                            <label for="categoryId" class="form-label">Product Category:</label>
+                            <h:selectOneMenu id="categoryId" value="#{adminCDI.categoryId}" class="form-control" required="true">
+                                <f:selectItems value="#{adminCDI.categories}" var="c" itemLabel="#{c.categoryName}" itemValue="#{c.categoryId}" />
+                            </h:selectOneMenu>
+                            <br/>
+
+                            <label for="productDetails" class="form-label">Product Details:</label>
+                            <h:inputTextarea id="productDetails" value="#{adminCDI.productDetails}" class="form-control" rows="5" cols="30" a:placeholder="Enter product details here..." />
+                            <br/>
+
+                            <label for="productPrice" class="form-label">Product Price:</label>
+                            <h:inputText id="productPrice" value="#{adminCDI.productPrice}" class="form-control" required="true" a:placeholder="Enter Product Price" />
+                            <br/>
+
+                            <label for="productQuantity" class="form-label">Product Quantity:</label>
+                            <h:inputText id="productQuantity" value="#{adminCDI.productQuantity}" class="form-control" required="true" a:placeholder="Enter Product Quantity" />
+                            <br/>
+
+                            <label for="productImage" class="form-label">Product Image:</label>
+                            <h:inputText id="productImage" value="#{adminCDI.productImage}" class="form-control" a:placeholder="Enter Image URL" />
+                            <br/>
+
+                            <h:commandButton value="Update Product" action="#{adminCDI.updateProduct}" class="btn btn-primary" />
+                        </h:form>
+                    </div>
+                </div>
+            </div>
+            <!-- Body Section End -->
+
+            <!-- Include the footer -->
+            <h:form>
+                <ui:include src="Footer.xhtml" />
+            </h:form>
+        </div>
+
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="js/jquery-ui.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/jquery.magnific-popup.min.js"></script>
+        <script src="js/aos.js"></script>
+        <script src="js/main.js"></script>
+    </h:body>
+</html>

@@ -1,0 +1,35 @@
+$colors: (
+  "primary": #007bff,
+  "secondary": #6c757d,
+);
+
+$theme-colors: (
+  "success": #28a745,
+  "danger": #dc3545,
+);
+
+$grid-breakpoints: (
+  "sm": 576px,
+  "md": 768px,
+  "lg": 992px,
+);
+
+$font-family-sans-serif: Arial, sans-serif;
+$font-family-monospace: Courier, monospace;
+
+:root {
+  @each $color, $value in $colors {
+    /*--#{$color}: #{$value};*/
+  }
+
+  @each $color, $value in $theme-colors {
+    /*--#{$color}: #{$value};*/
+  }
+
+  @each $bp, $value in $grid-breakpoints {
+    /*--breakpoint-#{$bp}: #{$value};*/
+  }
+
+  /*--font-family-sans-serif: #{inspect($font-family-sans-serif)};*/
+  --font-family-monospace: #{inspect($font-family-monospace)};
+}

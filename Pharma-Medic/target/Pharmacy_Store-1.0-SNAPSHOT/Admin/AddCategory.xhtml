@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+
+    <h:head>
+        <title>Add Category </title>
+
+        <!-- Google Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&amp;display=swap" />
+
+        <link rel="stylesheet" href="https://unpkg.com/@webpixels/css@1.1.5/dist/index.css"></link>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.4.0/font/bootstrap-icons.min.css"></link>
+
+        <!-- Local stylesheets -->
+
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="fonts/icomoon/style.css" />
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css" />
+        <link rel="stylesheet" href="css/magnific-popup.css" />
+        <link rel="stylesheet" href="css/jquery-ui.css" />
+        <link rel="stylesheet" href="css/owl.carousel.min.css" />
+        <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+        <link rel="stylesheet" href="css/aos.css" />
+
+    </h:head>
+
+    <h:body>
+
+        <div class="site-wrap">
+
+            <!-- Header Section Start -->
+            <h:form>
+            <ui:include src="Header.xhtml" />
+            </h:form>
+            <!--Header Section End-->
+
+            <!--Navigation Path Start--> 
+            <div class="bg-light py-3">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 mb-0">
+                            <a href="AdminDashboard.jsf">Home</a> 
+                            <span class="mx-2 mb-0">/</span> 
+                            <a href="AllCategories.jsf">All Categories</a> 
+                            <span class="mx-2 mb-0">/</span>
+                            Add Category
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Navigation Path Start-->
+
+            <!--Body Section start-->
+            <!--Products Section Starts-->                               
+            <div class="container ml-5 mr-5 mt-4 mb-5">
+
+                <!-- Add Product Form -->
+                <div class="card ml-5 mr-5">
+                    <div class="card-header">
+                        <h2>Add Category Details</h2>
+                    </div>
+
+                    <div class="card-body">
+
+                        <h:form id="AddCategoryForm">
+
+
+                            <h:outputLabel for="categoryName" class="form-label">Category Name:</h:outputLabel>
+                            <h:inputText id="categoryName" class="form-control" value="#{adminCDI.categoryName}" />
+                            <br/>
+                            <h:commandButton value="Add Category" class="btn btn-primary" action="#{adminCDI.addCategory()}" />
+                            <h:messages globalOnly="true" style="color: red;" />
+                        </h:form>
+
+                        <br/><br/>
+
+                    </div>
+                </div>
+            </div>
+
+            <!--PRoducts Section End-->            
+
+            <!--Body Section End Hear-->
+
+
+            <!-- Include the footer -->
+            <h:form>
+            <ui:include src="Footer.xhtml" />
+            </h:form>
+        </div>
+
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="js/jquery-ui.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/jquery.magnific-popup.min.js"></script>
+        <script src="js/aos.js"></script>
+
+        <script src="js/main.js"></script>
+    </h:body>
+</html>

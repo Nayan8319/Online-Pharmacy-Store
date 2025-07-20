@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:h="http://xmlns.jcp.org/jsf/html" 
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+
+    <h:head>
+        <title>Header Page</title>
+
+        <!-- Google Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&amp;display=swap" />
+
+        <!-- Local stylesheets -->
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="fonts/icomoon/style.css" />
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css" />
+        <link rel="stylesheet" href="css/magnific-popup.css" />
+        <link rel="stylesheet" href="css/jquery-ui.css" />
+        <link rel="stylesheet" href="css/owl.carousel.min.css" />
+        <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+        <link rel="stylesheet" href="css/aos.css" />
+    </h:head>
+
+    <h:body>
+        <ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                        xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+            
+            
+
+            <!-- Navbar Section -->
+            <div class="site-navbar py-2">
+                <div class="search-wrap">
+                    <div class="container">
+                        <h:commandLink value="" class="search-close js-search-close">
+                            <span class="icon-close2"></span>
+                        </h:commandLink>
+                        
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <!-- Logo -->
+                        <div class="logo">
+                            <div class="site-logo">
+                                <h:link outcome="/Users/home.jsf" styleClass="js-logo-clone">
+                                    <strong class="text-primary">Pharma</strong>Medic
+                                </h:link>
+                            </div>
+                        </div>
+
+                        <!-- Navigation Links -->
+                        <div class="main-nav d-none d-lg-block">
+                            <nav class="site-navigation text-right text-md-center" role="navigation">
+                                <ul class="site-menu js-clone-nav d-none d-lg-block">
+                                    <li>
+                                        <h:link outcome="/Users/home.jsf">Home</h:link>
+                                    </li>
+                                    <li>
+                                        <h:link outcome="/Users/Product.jsf">Product</h:link>
+                                    </li>
+                                    <li>
+                                        <h:link outcome="/Users/About.jsf">About</h:link>
+                                    </li>
+<!--                                    <li>
+                                        <h:link outcome="/Users/Contact.jsf">Contact</h:link>
+                                    </li>-->
+                                    <li>
+                                        <h:link outcome="/Users/AllOrders.jsf">My Orders</h:link>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+
+                        <!-- Icons Section -->
+                        <div class="icons">
+                            <!-- Search Button -->
+<!--                            <h:link outcome="/Users/Profile.jsf" rendered="#{not empty sessionScope['userId']}" styleClass="icons-btn d-inline-block">
+                                <span class="icon-user"></span>
+                            </h:link>-->
+                            
+                            <!-- Cart -->
+                            <h:link outcome="/Users/Cart.jsf" styleClass="icons-btn d-inline-block bag">
+                                <span class="icon-shopping-bag"></span>
+                                <!--<span class="number">2</span>-->
+                            </h:link>
+                            
+                            <!-- User Profile (Shown if logged in) -->
+                           <!-- Display User ID -->
+<!--                            <h:outputText value="ID:#{sessionScope['userId']}" 
+                                          styleClass="icons-btn d-inline-block text-primary"
+                                          rendered="#{not empty sessionScope['userId']}" />-->
+                            &nbsp;
+                            
+                            <!-- Sign In/Sign Up (Shown if not logged in) -->
+                            <h:outputLink value="/Pharmacy_Store/Login.jsf" styleClass="icons-btn d-inline-block" 
+                                          rendered="#{empty sessionScope['userId']}">
+                                <span class="icon-login"></span> Sign in /
+                            </h:outputLink>
+                            <h:outputLink value="/Pharmacy_Store/Register.jsf" styleClass="icons-btn d-inline-block" 
+                                          rendered="#{empty sessionScope['userId']}">
+                                <span class="icon-register"></span> Sign Up
+                            </h:outputLink>
+                            
+                            <!-- Logout (Shown if logged in) -->
+                            <h:commandLink action="#{userCDI.logout()}" styleClass="icons-btn d-inline-block" 
+                                           rendered="#{not empty sessionScope['userId']}">
+                                <span class="icon-register"></span> Logout
+                            </h:commandLink>
+
+                            <!-- Mobile Menu Toggle -->
+                            <h:outputLink value="#" styleClass="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none">
+                                <span class="icon-menu"></span>
+                            </h:outputLink>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ui:composition>
+    </h:body>
+</html>

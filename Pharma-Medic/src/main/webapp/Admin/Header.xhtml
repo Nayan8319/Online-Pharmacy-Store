@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:h="http://xmlns.jcp.org/jsf/html" 
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+
+    <h:head>
+        <title>Header Page</title>
+
+        
+        <!-- Google Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&amp;display=swap" />
+
+        <!-- Local stylesheets -->
+
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="fonts/icomoon/style.css" />
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css" />
+        <link rel="stylesheet" href="css/magnific-popup.css" />
+        <link rel="stylesheet" href="css/jquery-ui.css" />
+        <link rel="stylesheet" href="css/owl.carousel.min.css" />
+        <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+        <link rel="stylesheet" href="css/aos.css" />
+        
+    </h:head>
+
+
+    <h:body>
+        <h:form>
+        <ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                        xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+            <div class="site-navbar py-2">
+                <div class="search-wrap">
+                    <div class="container">
+                        <h:commandLink value="" class="search-close js-search-close">
+                            <span class="icon-close2"></span>
+                        </h:commandLink>
+                        <h:form>
+                            <h:inputText styleClass="form-control" 
+                                         value="#{bean.searchKeyword}" 
+                                         a:placeholder="Search keyword and hit enter..." />
+                        </h:form>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div class="logo">
+                            <div class="site-logo">
+                                <h:link outcome="/Users/home.jsf" styleClass="js-logo-clone">
+                                    <strong class="text-primary">Pharma</strong>Medic
+                                </h:link>
+                            </div>
+                        </div>
+
+                        <div class="main-nav d-none d-lg-block">
+                            <nav class="site-navigation text-right text-md-center" role="navigation">
+                                <ul class="site-menu js-clone-nav d-none d-lg-block">
+                                    <li>
+                                        <h:link outcome="/Admin/AdminDashboard.jsf">Home</h:link>
+                                    </li>
+                                    
+                                    <li>
+                                        <h:link outcome="/Admin/AllUsers.jsf">Users</h:link>
+                                    </li>
+                                    
+                                    <li>
+                                        <h:link outcome="/Admin/AllProducts.jsf">Products</h:link>
+                                    </li>
+                                   
+                                    <li>
+                                        <h:link outcome="/Admin/AllCategories.jsf">Categories</h:link>
+                                    </li>
+                                    
+                                    <li>
+                                        <h:link outcome="/Admin/AllOrders.jsf">Orders</h:link>
+                                    </li>
+                                    
+<!--                                    <li>
+                                        <h:link outcome="/Admin/AllPayments.jsf">Payments</h:link>
+                                    </li>-->
+                                    
+<!--                                    <li>
+                                        <h:link outcome="/Admin/About.jsf">About</h:link>
+                                    </li>-->
+                                    
+                                </ul>
+                            </nav>
+                        </div>
+
+                        <div class="icons">                            
+                            
+<!--                            <h:outputLink value="/Pharmacy/Users/Profile.jsf" styleClass="icons-btn d-inline-block user-icon">
+                                rendered="{userBean.loggedIn}" 
+                                <span class="icon-user"></span>
+                            </h:outputLink>-->
+
+                            <!-- Display login/register if not logged in -->
+                            <h:outputLink value="#{userCDI.logout()}"  styleClass="icons-btn d-inline-block"> 
+                                <span class="icon-login"></span> Logout
+                            </h:outputLink>
+                            
+                            <h:outputLink value="#" styleClass="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none">
+                                <span class="icon-menu"></span>
+                            </h:outputLink>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ui:composition>
+        </h:form>
+    </h:body>
+</html>
+

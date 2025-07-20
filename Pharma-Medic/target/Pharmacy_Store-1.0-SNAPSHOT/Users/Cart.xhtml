@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <title>Cart Page</title>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&amp;display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/style.css" />
+    </h:head>
+
+    <h:body>
+        <div class="site-wrap">
+
+            <!-- Header Section -->
+            <h:form>
+                <ui:include src="Header.xhtml" />
+            </h:form>
+
+            <!-- Breadcrumb Section -->
+            <div class="bg-light py-3">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 mb-0">
+                            <a href="home.jsf">Home</a>
+                            <span class="mx-2 mb-0">/</span>
+                            <strong class="text-black">Cart</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cart Section -->
+            <div class="site-section">
+                <div class="container">
+                    <div class="row mb-5">
+                        <div class="site-blocks-table">
+                            <f:view>
+                                <h:form>
+                                    <h:dataTable value="#{userCDI.cartProducts}" var="item" class="table table-bordered">
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="Image" />
+                                            </f:facet>
+                                            <h:graphicImage library="images" class="w-50 p-3" value="/Users/images/#{item.productId.productImage}" alt="Image Not Found" />
+                                        </h:column>
+
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="Product Name" />
+                                            </f:facet>
+                                            <h:outputText value="#{item.productId.productName}" />
+                                        </h:column>
+
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="Price" />
+                                            </f:facet>
+                                            <h:outputText value="#{item.productId.productPrice}" />
+                                        </h:column>
+
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="Quantity" />
+                                            </f:facet>
+                                            <h:outputText value="#{item.quantity}" class="form-control" />
+                                        </h:column>
+
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="Total Price" />
+                                            </f:facet>
+                                            <h:outputText value="₹#{item.totalPrice}" />
+                                        </h:column>
+
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="Actions" />
+                                            </f:facet>
+                                            <div class="btn-group">
+                                                <h:commandButton value="Remove" class="btn btn-danger" action="#{userCDI.deleteCart(item.cartId)}" />
+                                            </div>
+                                        </h:column>
+                                    </h:dataTable>
+                                </h:form>
+                            </f:view>
+                        </div>
+                    </div>
+
+                    <!-- Cart Totals -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <a href="Product.jsf" class="btn btn-primary btn-md btn-block">Continue Shopping</a>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row justify-content-end">
+                                <div class="col-md-7">
+                                    <div class="row">
+                                        <div class="col-md-12 text-right border-bottom mb-5">
+                                            <h3 class="text-black h4 text-uppercase">Cart Totals</h3>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-md-6">
+                                            <span class="text-black">Subtotal</span>
+                                        </div>
+                                        <div class="col-md-6 text-right">
+                                            <strong class="text-black">₹#{userCDI.subtotal}</strong>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-5">
+                                        <div class="col-md-6">
+                                            <span class="text-black">Total</span>
+                                        </div>
+                                        <div class="col-md-6 text-right">
+                                            <strong class="text-black">₹#{userCDI.subtotal}</strong>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <a href="/Pharmacy_Store/Users/Address.jsf" class="btn btn-primary btn-lg btn-block">Proceed to Checkout</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Section -->
+            <h:form>
+                <ui:include src="Footer.xhtml" />
+            </h:form>
+        </div>
+
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+    </h:body>
+</html>

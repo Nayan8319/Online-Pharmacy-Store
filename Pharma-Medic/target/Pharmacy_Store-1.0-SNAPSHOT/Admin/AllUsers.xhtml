@@ -1,0 +1,153 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <title>All Users</title>
+
+        <!-- Google Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&amp;display=swap" />
+
+        <link rel="stylesheet" href="https://unpkg.com/@webpixels/css@1.1.5/dist/index.css"></link>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.4.0/font/bootstrap-icons.min.css"></link>
+
+        <!-- Local stylesheets -->
+
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="fonts/icomoon/style.css" />
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css" />
+        <link rel="stylesheet" href="css/magnific-popup.css" />
+        <link rel="stylesheet" href="css/jquery-ui.css" />
+        <link rel="stylesheet" href="css/owl.carousel.min.css" />
+        <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+        <link rel="stylesheet" href="css/aos.css" />
+    </h:head>
+    <h:body>
+
+        <div class="site-wrap">
+            <h:form>
+            <!-- Header Section Start -->
+            <ui:include src="Header.xhtml" />
+            </h:form>
+            <!--Header Section End-->
+
+            <!--Navigation Path Start--> 
+            <div class="bg-light py-3">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 mb-0">
+                            <a href="AdminDashboard.jsf">Home</a> 
+                            <span class="mx-2 mb-0">/</span>
+                            All Users 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Navigation Path Start-->
+
+            <!--Body Section start-->
+            <!--User Section Starts-->  
+
+<!--            <ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                            xmlns:ui="http://xmlns.jcp.org/jsf/facelets">-->
+
+                <div class="card shadow border-1 ml-5 mr-5 mt-5 mb-7">
+
+                    <div class="care-header mt-2 mb-2 ">
+                        <!--User Information-->
+                        <h:link outcome="/Admin/AllUsers.jsf" class="btn btn-outline-primary" style="margin-left:10px">
+                            ALL USERS
+                        </h:link>
+                    </div>
+
+                    <div class="table-responsive">
+
+                        <f:view>
+                            <h:form>
+                                <h:dataTable value="#{adminCDI.users}" var="item" class="table table-hover table-nowrap">
+                                    <h:column>
+                                        <f:facet name="header" class="thead-light">
+                                            <h:outputText value="NO"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.userId}" >
+
+                                        </h:outputText>
+                                    </h:column>
+
+                                    <h:column>
+                                        <f:facet name="header" class="thead-light">
+                                            <h:outputText value="NAME"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.userName}" >
+
+                                        </h:outputText>
+                                    </h:column>
+
+                                    <h:column>
+                                        <f:facet name="header" class="thead-light">
+                                            <h:outputText value="EMAIL"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.userEmail}" >
+
+                                        </h:outputText>
+                                    </h:column>
+
+<!--                                    <h:column>
+                                        <f:facet name="header" class="thead-light">
+                                            <h:outputText value="PASSWORD"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.userPassword}" >
+
+                                        </h:outputText>
+                                    </h:column>-->
+
+                                    <h:column>
+                                        <f:facet name="header" class="thead-light">
+                                            <h:outputText value="PHONE NO"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.userPhone}" >
+
+                                        </h:outputText>
+                                    </h:column>
+
+
+                                    <h:column>
+                                        <f:facet name="header" class="thead-light">ACTION</f:facet>
+                                        <h:commandButton value="Delete" class="btn btn-danger" action="#{adminCDI.deleteUser(item.userId)}"></h:commandButton>
+                                    </h:column>
+                                </h:dataTable>
+                            </h:form>
+                        </f:view>
+
+                    </div>
+
+                </div>
+
+            <!--</ui:composition>-->
+
+            <!--User Section End-->
+            
+            <!--Body Section End Hear-->
+
+            <!-- Include the footer -->
+            <h:form>
+            <ui:include src="Footer.xhtml" />
+            </h:form>
+        </div>
+
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="js/jquery-ui.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/jquery.magnific-popup.min.js"></script>
+        <script src="js/aos.js"></script>
+
+        <script src="js/main.js"></script>
+    </h:body>
+</html>

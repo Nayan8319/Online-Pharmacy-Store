@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title> Small Div Section </title>
+    </h:head>
+    <h:body>
+        <h:form>
+        <ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                         xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+           
+
+            <!--small Div section start-->
+
+            <div class="container-fluid">
+            
+                <div class="row g-5 mt-3 ml-4 mr-4">
+                
+                <div class="col-xl-4 col-sm-8 col-16">
+                    
+                        <div class="card shadow border-0">
+                        
+                            <div class="card-body">
+                            
+                                <div class="row">
+                                <div class="col">
+                                    <span class="h6 font-semibold text-muted text-sm d-block mb-2">Products</span>
+                                    <span class="h6 font-bold mb-0">
+                                        #{userCDI.totalProducts}
+                                    </span>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="icon icon-shape bg-tertiary text-white text-lg rounded-circle">
+                                        <i class="bi bi-minecart-loaded" ></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-2 mb-0 text-sm">
+                                <span class="badge badge-pill bg-soft-success text-success me-2">
+                                    <i class="bi bi-arrow-up me-1"></i>
+                                </span>
+                                <span class="text-nowrap text-xs text-muted">Total Amount Of Products</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-sm-8 col-16">
+                    <div class="card shadow border-0">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col">
+                                    <span class="h6 font-semibold text-muted text-sm d-block mb-2">Users</span>
+                                    <span class="h6 font-bold mb-0">
+                                        #{userCDI.totalUsers}
+                                    </span>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="icon icon-shape bg-primary text-white text-lg rounded-circle">
+                                        <i class="bi bi-people" ></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-2 mb-0 text-sm">
+                                <span class="badge badge-pill bg-soft-success text-success me-2">
+                                    <i class="bi bi-arrow-up me-1"></i>
+                                    30%
+                                </span>
+                                <span class="text-nowrap text-xs text-muted">Total Amount Of Customers</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-sm-8 col-16">
+                    <div class="card shadow border-0">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col">
+                                    <span class="h6 font-semibold text-muted text-sm d-block mb-2">Total Sales</span>
+                                    <span class="h6 font-bold mb-0">
+                                        #{userCDI.totalSales}
+                                    </span>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="icon icon-shape bg-info text-white text-lg rounded-circle"  >
+                                        <i class="bi bi-cart4" ></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-2 mb-0 text-sm">
+                                <span class="badge badge-pill bg-soft-success text-success me-2">
+                                    <i class="bi bi-arrow-up me-1"></i>
+                                </span>
+                                <span class="text-nowrap text-xs text-muted">All Time Sales Amount</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                    <br/>
+                    <!--Second Row of Dives-->
+                    <!--<br/>-->
+                    
+                </div>
+            </div>
+            <!--small div section ends hear-->
+
+        </ui:composition>
+        </h:form>
+    </h:body>
+</html>

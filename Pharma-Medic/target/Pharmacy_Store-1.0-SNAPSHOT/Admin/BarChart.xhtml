@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <title>Static Bar Chart</title>
+</h:head>
+<h:body>
+    <h:form>
+        <p:panel header="Static Orders by Month">
+            <p:chart type="bar" model="#{chartBean.barModel()}" style="width: 100%; height: 400px;" />
+        </p:panel>
+    </h:form>
+</h:body>
+</html>

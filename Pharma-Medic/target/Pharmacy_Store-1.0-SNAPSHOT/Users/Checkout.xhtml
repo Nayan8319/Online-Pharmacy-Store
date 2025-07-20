@@ -1,0 +1,146 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Checkout Page</title>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&amp;display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="fonts/icomoon/style.css" />
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css" />
+        <link rel="stylesheet" href="css/magnific-popup.css" />
+        <link rel="stylesheet" href="css/jquery-ui.css" />
+        <link rel="stylesheet" href="css/owl.carousel.min.css" />
+        <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+        <link rel="stylesheet" href="css/aos.css" />
+        <link rel="stylesheet" href="css/style.css" />
+    </h:head>
+    <h:body>
+        <div class="site-wrap">
+            <h:form>
+                <!-- Include the header -->
+                <ui:include src="Header.xhtml" />
+
+                <!-- Navigation Path -->
+                <div class="bg-light py-3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 mb-0">
+                                <a href="home.jsf">Home</a> 
+                                <span class="mx-2 mb-0">/</span> 
+                                <strong class="text-black">Checkout</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Body Section Start -->
+                <div class="site-section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 mb-5 mb-md-0">
+                                <h2 class="h3 mb-3 text-black">Billing Details</h2>
+                                <div class="p-3 p-lg-5 border">
+                                    <div class="form-group row">
+                                        <div class="col-md-12">
+                                            <label for="userName" class="text-black">User Name <span class="text-danger">*</span></label>
+                                            <h:inputText class="form-control" id="userName" value="#{addressBean.user.userName}" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-md-12">
+                                            <label for="email" class="text-black">Email Address <span class="text-danger">*</span></label>
+                                            <h:inputText class="form-control" id="email" value="#{addressBean.user.userEmail}" />
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <div class="col-md-12">
+                                            <label for="address" class="text-black">Address <span class="text-danger">*</span></label>
+                                            <h:inputText class="form-control" id="address" value="#{addressBean.street}" a:placeholder="Street address" />
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <div class="col-md-6">
+                                            <label for="phone" class="text-black">Phone <span class="text-danger">*</span></label>
+                                            <h:inputText class="form-control" id="phone" value="#{addressBean.user.userPhone}" a:placeholder="Phone Number" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="city" class="text-black">City <span class="text-danger">*</span></label>
+                                            <h:inputText class="form-control" id="city" value="#{addressBean.city}" />
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <div class="col-md-6">
+                                            <label for="state" class="text-black">State / Country <span class="text-danger">*</span></label>
+                                            <h:inputText class="form-control" id="state" value="#{addressBean.state}" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="zip" class="text-black">Postal / Zip <span class="text-danger">*</span></label>
+                                            <h:inputText class="form-control" id="zip" value="#{addressBean.zipCode}" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="row mb-5">
+                                    <div class="col-md-12">
+                                        <h2 class="h3 mb-3 text-black">Your Order</h2>
+                                        <div class="p-3 p-lg-5 border">
+                                            <table class="table site-block-order-table mb-5">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Product</th>
+                                                        <th>Total</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <ui:repeat value="#{userCDI.cartProducts}" var="item">
+                                                        <tr>
+                                                            <td>#{item.productId.productName} <strong class="mx-2">x</strong> #{item.quantity}</td>
+                                                            <td>₹#{item.totalPrice}</td>
+                                                        </tr>
+                                                    </ui:repeat>
+                                                    <tr>
+                                                        <td class="text-black font-weight-bold"><strong>Cart Subtotal</strong></td>
+                                                        <td class="text-black">₹#{userCDI.subtotal}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-black font-weight-bold"><strong>Order Total</strong></td>
+                                                        <td class="text-black font-weight-bold"><strong>₹#{userCDI.subtotal}</strong></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <div class="form">
+                                                <div class="col-12">
+                                                    <h:commandButton value="Proceed to Checkout" action="#{userCheckoutBean.processCheckout}" class="btn btn-primary btn-lg btn-block" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer Include -->
+                <ui:include src="Footer.xhtml" />
+            </h:form>
+        </div>
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="js/jquery-ui.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/jquery.magnific-popup.min.js"></script>
+        <script src="js/aos.js"></script>
+        <script src="js/main.js"></script>
+    </h:body>
+</html>

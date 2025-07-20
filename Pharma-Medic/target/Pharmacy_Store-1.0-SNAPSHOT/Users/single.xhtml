@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <title>Single Product Page</title>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&amp;display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="fonts/icomoon/style.css" />
+
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css" />
+        <link rel="stylesheet" href="css/magnific-popup.css" />
+        <link rel="stylesheet" href="css/jquery-ui.css" />
+        <link rel="stylesheet" href="css/owl.carousel.min.css" />
+        <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+
+        <link rel="stylesheet" href="css/aos.css" />
+
+        <link rel="stylesheet" href="css/style.css" />
+    </h:head>
+    <h:body>
+        <div class="site-wrap">
+            <!-- Include header -->
+            <h:form>
+                <ui:include src="Header.xhtml" />
+            </h:form>
+
+            <!-- Main content -->
+            <h:form>
+                <f:metadata>
+                    <f:viewAction action="#{userCDI.loadUserIdFromSessionStorage}" />
+                    <f:viewAction action="#{userCDI.loadProduct}" />
+                </f:metadata>
+                <div class="site-section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-5 mr-auto">
+                                <div class="border text-center">
+                                    <h:graphicImage library="images" value="/Users/images/#{userCDI.selectedProduct.productImage}" 
+                                                    alt="#{userCDI.selectedProduct.productName}" class="img-fluid p-5" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <h2 class="text-black">#{userCDI.selectedProduct.productName}</h2>
+                                <p>#{userCDI.selectedProduct.productDetails}</p>
+                                <p><del>₹95.00</del> <strong class="text-primary h4">₹#{userCDI.selectedProduct.productPrice}</strong></p>
+
+                                <!-- Quantity Selector -->
+                                <div class="mb-5">
+                                    <div class="input-group mb-3" style="max-width: 120px;">
+                                        <div class="input-group-prepend">
+                                            <!-- Decrease quantity by 1 -->
+                                            <a class="btn btn-outline-primary js-btn-minus" href="javascript:void(0);" onclick="updateQuantity(-1)">−</a>
+                                        </div>
+                                        <!-- Quantity input field -->
+                                        <h:inputText id="quantity" class="form-control text-center" value="#{userCDI.quantity}" a:aria-label="Quantity Input" a:placeholder="Enter quantity">
+                                            <f:ajax render="quantity" />
+                                        </h:inputText>
+                                        <div class="input-group-append">
+                                            <!-- Increase quantity by 1 -->
+                                            <a class="btn btn-outline-primary js-btn-plus" href="javascript:void(0);" onclick="updateQuantity(1)">+</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Add to Cart Button -->
+                                <p>
+                                    <h:commandButton id="addToCartButton" value="Add To Cart" class="buy-now btn btn-sm height-auto px-4 py-3 btn-primary"
+                                                     action="#{userCDI.addProductToCart}">
+                                        <f:param name="userId" value="#{userCDI.userId}" />
+                                        <f:param name="productId" value="#{userCDI.selectedProduct.productId}" />
+                                        <f:param name="quantity" value="#{userCDI.quantity}" />
+                                    </h:commandButton>
+                                </p>
+
+                                <!-- Cart Details -->
+<!--                                <h:form id="cartDetailsForm">
+                                    <h3>Cart Details</h3>
+                                    <div class="form-group">
+                                        <label for="displayUserId">User ID:</label>
+                                        <h:outputText id="displayUserId" value="#{userCDI.userId}" style="display: block;" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="displayProductId">Product ID:</label>
+                                        <h:outputText id="displayProductId" value="#{userCDI.selectedProduct.productId}" style="display: block;" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="displayQuantity">Quantity:</label>
+                                        <h:outputText id="displayQuantity" value="#{userCDI.quantity}" style="display: block;" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="displayTotalPrice">Total Price:</label>
+                                        <h:outputText id="displayTotalPrice" value="#{userCDI.selectedProduct.productPrice}" style="display: block;" />
+                                    </div>
+                                </h:form>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </h:form>
+
+            <!-- Include footer -->
+            <h:form>
+                <ui:include src="Footer.xhtml" />
+            </h:form>
+
+            <script src="js/jquery-3.3.1.min.js"></script>
+            <script src="js/jquery-ui.js"></script>
+            <script src="js/popper.min.js"></script>
+            <script src="js/bootstrap.min.js"></script>
+            <script src="js/owl.carousel.min.js"></script>
+            <script src="js/jquery.magnific-popup.min.js"></script>
+            <script src="js/aos.js"></script>
+
+            <script src="js/main.js"></script>
+
+        </div>
+    </h:body>
+</html>

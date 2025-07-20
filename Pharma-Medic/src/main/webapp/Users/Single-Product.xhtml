@@ -1,0 +1,189 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title> Single Product Page</title>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&amp;display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="fonts/icomoon/style.css" />
+
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css" />
+        <link rel="stylesheet" href="css/magnific-popup.css" />
+        <link rel="stylesheet" href="css/jquery-ui.css" />
+        <link rel="stylesheet" href="css/owl.carousel.min.css" />
+        <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+
+        <link rel="stylesheet" href="css/aos.css" />
+
+        <link rel="stylesheet" href="css/style.css" />
+
+    </h:head>
+    <h:body>
+        <div class="site-wrap">
+            <h:form>
+                <!-- Include the header -->
+                <ui:include src="Header.xhtml" />
+            </h:form>
+
+            <!--body section start-->
+
+            <h:form>
+            <f:metadata>
+                <f:viewAction action="#{userCDI.loadProduct}" />
+            </f:metadata>
+            <div class="site-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5 mr-auto">
+                            <div class="border text-center">
+                                <h:graphicImage library="images" value="/Users/images/#{userCDI.selectedProduct.productImage}" 
+                                                alt="#{userCDI.selectedProduct.productName}" class="img-fluid p-5" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h2 class="text-black">#{userCDI.selectedProduct.productName}</h2>
+                            <p>#{userCDI.selectedProduct.productDetails}</p>
+                            <!-- comment -->
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Pariatur, vitae, explicabo? Incidunt facere, natus
+                                soluta dolores iusto! 
+                                Molestiae expedita veritatis nesciunt doloremque sint asperiores fuga voluptas.
+                            </p>
+
+
+                            <p><del>$95.00</del>  <strong class="text-primary h4">$#{userCDI.selectedProduct.productPrice}</strong></p>
+
+
+
+                            <div class="mb-5">
+                                <div class="input-group mb-3" style="max-width: 220px;">
+                                    <div class="input-group-prepend">
+                                        <button class="btn btn-outline-primary js-btn-minus" type="button">&minus;</button>
+                                    </div>
+                                    <h:inputText  class="form-control text-center" value="1" a:placeholder="" />
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-primary js-btn-plus" type="button">+</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <p>
+                                <h:commandLink value="Add To Cart" action="#{userCDI.addToCart()}" class="buy-now btn btn-sm height-auto px-4 py-3 btn-primary">
+                                  
+                                </h:commandLink>
+                            </p>
+
+                            <div class="mt-5">
+                                <ul class="nav nav-pills mb-3 custom-pill" id="pills-tab" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab"
+                                           aria-controls="pills-home" aria-selected="true">Ordering Information</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab"
+                                           aria-controls="pills-profile" aria-selected="false">Specifications</a>
+                                    </li>
+
+                                </ul>
+                                <div class="tab-content" id="pills-tabContent">
+                                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                                        <table class="table custom-table">
+                                            <thead>
+                                                <th>Material</th>
+                                                <th>Description</th>
+                                                <th>Packaging</th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">OTC022401</th>
+                                                    <td>Pain Management: Acetaminophen PM Extra-Strength Caplets, 500 mg, 100/Bottle</td>
+                                                    <td>1 BT</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">OTC022401</th>
+                                                    <td>Pain Management: Acetaminophen PM Extra-Strength Caplets, 500 mg, 100/Bottle</td>
+                                                    <td>144/CS</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">OTC022401</th>
+                                                    <td>Pain Management: Acetaminophen PM Extra-Strength Caplets, 500 mg, 100/Bottle</td>
+                                                    <td>1 EA</td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+
+                                        <table class="table custom-table">
+
+                                            <tbody>
+                                                <tr>
+                                                    <td>HPIS CODE</td>
+                                                    <td class="bg-light">999_200_40_0</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>HEALTHCARE PROVIDERS ONLY</td>
+                                                    <td class="bg-light">No</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>LATEX FREE</td>
+                                                    <td class="bg-light">Yes, No</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>MEDICATION ROUTE</td>
+                                                    <td class="bg-light">Topical</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="site-section bg-image overlay" style="background-image: url('images/hero_bg_2.jpg');">
+                <div class="container">
+                    <div class="row justify-content-center text-center">
+                        <div class="col-lg-7">
+                            <h3 class="text-white">Sign up for discount up to 55% OFF</h3>
+                            <p class="text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo omnis voluptatem consectetur quam.</p>
+                            <p class="mb-0">
+                                <a href="/Pharmacy_Store/Register.jsf" class="btn btn-outline-white">Sign up</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            </h:form>
+            <!--body section end-->
+
+            <!-- Include the Footer -->
+            <h:form>
+                <ui:include src="Footer.xhtml" />
+            </h:form>
+
+            <script src="js/jquery-3.3.1.min.js"></script>
+            <script src="js/jquery-ui.js"></script>
+            <script src="js/popper.min.js"></script>
+            <script src="js/bootstrap.min.js"></script>
+            <script src="js/owl.carousel.min.js"></script>
+            <script src="js/jquery.magnific-popup.min.js"></script>
+            <script src="js/aos.js"></script>
+
+            <script src="js/main.js"></script>
+
+        </div>
+
+    </h:body>
+</html>
